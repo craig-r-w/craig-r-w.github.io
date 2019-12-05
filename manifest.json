@@ -1,0 +1,14 @@
+{
+  "name": "Hello World",
+  "short_name": "Hello",
+  "lang": "en-UK",
+  "start_url": "/index.html",
+  "display": "standalone",
+  "icons": [
+	  {
+		"src": "images/icon.png",
+		"type": "image/png",
+		"sizes": "144x144"
+	  }
+	]
+}

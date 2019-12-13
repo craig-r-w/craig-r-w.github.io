@@ -22,6 +22,13 @@
 	<body>
 		<div id="test">Hello There 2</div>
 		
+		<button onclick="allowPush()">Push API Allow</button>
+		<script>
+			function allowPush() {
+				navigator.serviceWorker.PushManager.subscribe();
+			}
+		</script>
+		
 		<button onclick="notifyMe()">Test</button>
 		<script>
 			function notifyMe() {

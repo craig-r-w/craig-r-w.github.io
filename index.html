@@ -11,6 +11,7 @@
 		    navigator.serviceWorker.register('/service_worker.js')
 		      .then(reg => {
 			console.log('Service worker registered! 😎', reg);
+				reg.pushManager.subscribe();
 		      })
 		      .catch(err => {
 			console.log('😥 Service worker registration failed: ', err);
@@ -25,7 +26,7 @@
 		<button onclick="allowPush()">Push API Allow</button>
 		<script>
 			function allowPush() {
-				navigator.serviceWorker.subscribe();
+				//navigator.serviceWorker.subscribe();
 			}
 		</script>
 		

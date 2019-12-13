@@ -12,6 +12,15 @@
 		      .then(reg => {
 			console.log('Service worker registered! 😎', reg);
 				reg.pushManager.subscribe();
+				
+				const title = 'Push Codelab';
+				  const options = {
+					body: 'Yay it works.',
+					icon: 'images/icons-192.png',
+					badge: 'images/favicon.png'
+				  };
+				
+				reg.showNotification(title, options);
 		      })
 		      .catch(err => {
 			console.log('😥 Service worker registration failed: ', err);

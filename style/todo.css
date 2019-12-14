@@ -13,14 +13,28 @@ body {
 #container {
   --columns: auto-fit; /*auto-fill*/
   
-  /*Each cell must never be shorter than min-width and never bigger than max-width*/
-  --min-width: 15rem;
-  /*1fr fills the space exactly- specifying an actual value implements a physical cap*/
-  --max-width: 1fr;
+  /*Each cell must never be shorter than min-width and never bigger than max-width*
+  --min-width: 30vw; /*15rem;*/
+  /*1fr fills the space exactly- specifying an actual value implements a physical cap*
+  --max-width: auto;
   --column-width: minmax( var(--min-width), var(--max-width));
+  *
   
   display: grid;
-  grid-template-columns: repeat( var(--columns), var(--column-width));
+  
+  grid-auto-flow: row;*/
+  
+  display: grid;
+  grid-template-rows: auto;/*auto;*/
+  /*grid-template-columns: auto auto auto auto;*/
+  grid-template-columns: repeat(auto-fit, minmax(10vw, 1fr));
+  
+  /*grid-auto-flow: row;*/
+  
+  
+  
+  
+  /*grid-template-rows: minmax(100px, 1fr);*/
   
   /*grid-template-rows: repeat(10, 100px);*/
   
@@ -33,6 +47,57 @@ body {
 }
 
 #container > div {	
+	background-color: #9e9e9e;
+	padding: 1rem;
+	border-radius: 1rem;
+	
+	
+	grid-column: auto / span 3;
+	
+	/*width: fill-content;*/
+	
+	/* Allow really long words that would overflow to be split and sent to a new line.*/
+	word-break: break-word;
+}
+
+
+
+
+
+
+
+
+
+#container_old {
+  --columns: auto-fit; /*auto-fill*/
+  
+  /*Each cell must never be shorter than min-width and never bigger than max-width*/
+  --min-width: 30vw; /*15rem;*/
+  /*1fr fills the space exactly- specifying an actual value implements a physical cap*/
+  --max-width: auto;
+  --column-width: minmax( var(--min-width), var(--max-width));
+  
+  
+  display: grid;
+  
+  /*grid-auto-flow: row;*/
+  
+  grid-template-columns: repeat( var(--columns), var(--column-width));
+  
+  
+  /*grid-template-rows: minmax(100px, 1fr);*/
+  
+  /*grid-template-rows: repeat(10, 100px);*/
+  
+  /* The gap inbetween each grid cell. */
+  grid-gap: 1rem;
+  
+  /*grid-row: span 2 / auto;*/
+  
+  /*grid-gap: 1rem;*/
+}
+
+#container_old > div {	
 	background-color: #9e9e9e;
 	padding: 1rem;
 	border-radius: 1rem;

@@ -3,8 +3,10 @@ html {
 	color: #ffffff;
 }
 
-body {
+body {	
 	font-size: calc(14px + (26 - 14) * ((100vw - 300px) / (1600 - 300)));
+	line-height: calc(1.3em + (1.5 - 1.2) * ((100vw - 300px)/(1600 - 300)));
+	
 	/*font-size: calc(1 / 2vh);/*2vw;*/
 }
 
@@ -12,16 +14,20 @@ body {
   --columns: auto-fit; /*auto-fill*/
   
   /*Each cell must never be shorter than min-width and never bigger than max-width*/
-  --min-width: 10rem;
+  --min-width: 15rem;
   /*1fr fills the space exactly- specifying an actual value implements a physical cap*/
   --max-width: 1fr;
-  --cell-width: minmax( var(--min-width), var(--max-width));
+  --column-width: minmax( var(--min-width), var(--max-width));
   
   display: grid;
-  grid-template-columns: repeat( var(--columns), var(--cell-width));
+  grid-template-columns: repeat( var(--columns), var(--column-width));
+  
+  /*grid-template-rows: repeat(10, 100px);*/
   
   /* The gap inbetween each grid cell. */
   grid-gap: 1rem;
+  
+  /*grid-row: span 2 / auto;*/
   
   /*grid-gap: 1rem;*/
 }
@@ -30,6 +36,8 @@ body {
 	background-color: #9e9e9e;
 	padding: 1rem;
 	border-radius: 1rem;
+	
+	/*width: fill-content;*/
 	
 	/* Allow really long words that would overflow to be split and sent to a new line.*/
 	word-break: break-word;

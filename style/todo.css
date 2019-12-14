@@ -1,0 +1,48 @@
+html {
+	background-color: #3b3f45;
+	color: #ffffff;
+}
+
+body {
+	font-size: calc(14px + (26 - 14) * ((100vw - 300px) / (1600 - 300)));
+	/*font-size: calc(1 / 2vh);/*2vw;*/
+}
+
+#container {
+  --columns: auto-fit; /*auto-fill*/
+  
+  /*Each cell must never be shorter than min-width and never bigger than max-width*/
+  --min-width: 10rem;
+  /*1fr fills the space exactly- specifying an actual value implements a physical cap*/
+  --max-width: 1fr;
+  --cell-width: minmax( var(--min-width), var(--max-width));
+  
+  display: grid;
+  grid-template-columns: repeat( var(--columns), var(--cell-width));
+  
+  /* The gap inbetween each grid cell. */
+  grid-gap: 1rem;
+  
+  /*grid-gap: 1rem;*/
+}
+
+#container > div {	
+	background-color: #9e9e9e;
+	padding: 1rem;
+	border-radius: 1rem;
+	
+	/* Allow really long words that would overflow to be split and sent to a new line.*/
+	word-break: break-word;
+}
+
+/*
+#container {
+	width: 80%;
+	background-color: red;
+	text-align: center;
+}
+
+#description {
+	width: 100%;
+}
+*/

@@ -90,6 +90,10 @@ input[type=checkbox] {
 	transition: all 0.45s;
 }
 
+input[type=checkbox]:focus {
+	outline: none;
+}
+
 input[type=checkbox]:checked {
 	/*
 		--center-colour: #66bb6a;
